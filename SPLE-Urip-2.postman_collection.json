@@ -220,7 +220,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// {\n//   \"email\": \"alice.admin@gmail.com\",\n//   \"password\": \"alicePass_123\"\n// }\n\n// {\n//   \"email\": \"bob.user@gmail.com\",\n//   \"password\": \"bobPass_456\"\n// }\n\n// {\n//   \"email\": \"charlie.admin@gmail.com\",\n//   \"password\": \"charliePass_789\"\n// }\n\n// {\n//   \"email\": \"david.user@gmail.com\",\n//   \"password\": \"davidPass_012\"\n// }\n\n// {\n//   \"email\": \"emma.admin@gmail.com\",\n//   \"password\": \"emmaPass_345\"\n// }\n\n// {\n//   \"email\": \"frank.user@gmail.com\",\n//   \"password\": \"frankPass_678\"\n// }\n\n// {\n//   \"email\": \"grace.admin@gmail.com\",\n//   \"password\": \"gracePass_901\"\n// }\n\n// {\n//   \"email\": \"hannah.user@gmail.com\",\n//   \"password\": \"hannahPass_234\"\n// }\n\n// {\n//   \"email\": \"ian.admin@gmail.com\",\n//   \"password\": \"ianPass_567\"\n// }\n\n// {\n//   \"email\": \"jack.user@gmail.com\",\n//   \"password\": \"jackPass_890\"\n// }\n\n\n// {\n//   \"email\": \"kelly.admin@gmail.com\",\n//   \"password\": \"kellyPass_111\"\n// }\n\n{\n  \"email\": \"kelly.admin@gmail.com\",\n  \"password\": \"kellyPass_111\"\n}\n\n",
+							"raw": "// {\n//   \"email\": \"alice.admin@gmail.com\",\n//   \"password\": \"alicePass_123\"\n// }\n\n// {\n//   \"email\": \"bob.user@gmail.com\",\n//   \"password\": \"bobPass_456\"\n// }\n\n// {\n//   \"email\": \"charlie.admin@gmail.com\",\n//   \"password\": \"charliePass_789\"\n// }\n\n// {\n//   \"email\": \"david.user@gmail.com\",\n//   \"password\": \"davidPass_012\"\n// }\n\n// {\n//   \"email\": \"emma.admin@gmail.com\",\n//   \"password\": \"emmaPass_345\"\n// }\n\n// {\n//   \"email\": \"frank.user@gmail.com\",\n//   \"password\": \"frankPass_678\"\n// }\n\n// {\n//   \"email\": \"grace.admin@gmail.com\",\n//   \"password\": \"gracePass_901\"\n// }\n\n{\n  \"email\": \"hannah.user@gmail.com\",\n  \"password\": \"hannahPass_234\"\n}\n\n// {\n//   \"email\": \"ian.admin@gmail.com\",\n//   \"password\": \"ianPass_567\"\n// }\n\n// {\n//   \"email\": \"jack.user@gmail.com\",\n//   \"password\": \"jackPass_890\"\n// }\n\n\n// {\n//   \"email\": \"kelly.admin@gmail.com\",\n//   \"password\": \"kellyPass_111\"\n// }\n\n// {\n//   \"email\": \"kelly.admin@gmail.com\",\n//   \"password\": \"kellyPass_111\"\n// }\n\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -348,7 +348,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkyNzIzMTMsImVtYWlsIjoiamFjay51c2VyQGdtYWlsLmNvbSJ9.qAXtjX5bNZcQcl7SmbwoQlWUBPfqRR7tMFo51Gcnijk",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3Mzk0OTMwMjMsImVtYWlsIjoiaGFubmFoLnVzZXJAZ21haWwuY29tIn0.9X1x13pCvk2r-roh2SYg1rAtkraY6R2yadZqGIqrzhQ",
 									"type": "string"
 								}
 							]
@@ -356,7 +356,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{API_SPLE}}/api/public/carts/10/products/4/quantity/2",
+							"raw": "{{API_SPLE}}/api/public/carts/10/products/3/quantity/1",
 							"host": [
 								"{{API_SPLE}}"
 							],
@@ -366,9 +366,9 @@
 								"carts",
 								"10",
 								"products",
-								"4",
+								"3",
 								"quantity",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -390,7 +390,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_SPLE}}/api/public/users/bob.user@gmail.com/carts/3",
+							"raw": "{{API_SPLE}}/api/public/users/hannah.user@gmail.com/carts/3",
 							"host": [
 								"{{API_SPLE}}"
 							],
@@ -398,7 +398,7 @@
 								"api",
 								"public",
 								"users",
-								"bob.user@gmail.com",
+								"hannah.user@gmail.com",
 								"carts",
 								"3"
 							]
@@ -947,7 +947,7 @@
 					"response": []
 				},
 				{
-					"name": "Add Cart Payment",
+					"name": "Create Order",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1019,28 +1019,6 @@
 								"users",
 								"{email}",
 								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Email Order",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{API_SPLE}}/api/public/users/{email}/orders/{OrderID}",
-							"host": [
-								"{{API_SPLE}}"
-							],
-							"path": [
-								"api",
-								"public",
-								"users",
-								"{email}",
-								"orders",
-								"{OrderID}"
 							]
 						}
 					},
