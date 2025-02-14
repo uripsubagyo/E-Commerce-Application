@@ -890,7 +890,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkyNjcwMDQsImVtYWlsIjoia2VsbHkuYWRtaW5AZ21haWwuY29tIn0.BnC5xs0aoUZJjboopAJkivGww0zh1ZTpqlZv3yCwgW4",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3Mzk0OTI5MjEsImVtYWlsIjoia2VsbHkuYWRtaW5AZ21haWwuY29tIn0.iQs0Va5KjkJSu27ElfgtvxxK6ELgob7PqgJCOI-hiZ4",
 									"type": "string"
 								}
 							]
@@ -919,7 +919,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkyNjcwMDQsImVtYWlsIjoia2VsbHkuYWRtaW5AZ21haWwuY29tIn0.BnC5xs0aoUZJjboopAJkivGww0zh1ZTpqlZv3yCwgW4",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkyNzMzNzIsImVtYWlsIjoiaWFuLmFkbWluQGdtYWlsLmNvbSJ9.AZAqBPUoYC4RPZEYD6BHp8A-I_CQrPz5IRnYIq3K5wE",
 									"type": "string"
 								}
 							]
@@ -948,25 +948,22 @@
 				},
 				{
 					"name": "Create Order",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkyNzQyOTUsImVtYWlsIjoiamFjay51c2VyQGdtYWlsLmNvbSJ9.aSmie1a33F4J7ZWFkkKO_Jg1VAnGl5w5mF_zr5q2atA",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkyNzQzMjksImVtYWlsIjoiZGF2aWQudXNlckBnbWFpbC5jb20ifQ.keEu2LQL8_xSEO0Xevzuiu2adnm1EC0WrmopzKKBlRo",
 									"type": "string"
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"payment\": {\n        \"paymentID\": 1,\n        \"paymentMethod\":  \"Credit Card\"\n    }\n}",
+							"raw": "{\n   \"cardNumber\":\"123123123123123\",\n   \"cvcNumber\": 343\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -974,7 +971,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{API_SPLE}}/api/public/users/david.user@gmail.com/carts/5/payments/QRIS/order",
+							"raw": "{{API_SPLE}}/api/public/users/hannah.user@gmail.com/carts/9/payments/Credit Card/order",
 							"host": [
 								"{{API_SPLE}}"
 							],
@@ -982,11 +979,11 @@
 								"api",
 								"public",
 								"users",
-								"david.user@gmail.com",
+								"hannah.user@gmail.com",
 								"carts",
-								"5",
+								"9",
 								"payments",
-								"QRIS",
+								"Credit Card",
 								"order"
 							]
 						}
@@ -1009,7 +1006,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_SPLE}}/api/public/users/{email}/orders",
+							"raw": "{{API_SPLE}}/api/public/users/hannah.user@gmail.com/orders",
 							"host": [
 								"{{API_SPLE}}"
 							],
@@ -1017,8 +1014,37 @@
 								"api",
 								"public",
 								"users",
-								"{email}",
+								"hannah.user@gmail.com",
 								"orders"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_SPLE}}/api/public/users/hannah.user@gmail.com/orders/1",
+							"host": [
+								"{{API_SPLE}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"hannah.user@gmail.com",
+								"orders",
+								"1"
 							]
 						}
 					},
