@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.app.payloads.CardInformation;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -65,7 +66,15 @@ public class OrderServiceImpl implements OrderService {
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
+	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod, String cardNumber, Integer cvcNumber ) {
+
+		if(!paymentMethod.equals("Credit Card")){
+			throw new APIException("Invalid payment method");
+		}
+
+		if (cardNumber.length() != 15 || cvcNumber < 100  || cvcNumber > 999) {
+			throw new APIException("Invalid Credit Card");
+		}
 
 		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
