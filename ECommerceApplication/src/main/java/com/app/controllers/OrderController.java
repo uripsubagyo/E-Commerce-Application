@@ -29,10 +29,7 @@ public class OrderController {
 			@PathVariable Long cartId,
 			@PathVariable String paymentMethod,
 			@RequestBody CardInformation cardInformation
-
 	) {
-		System.out.println(cardInformation.getCvcNumber());
-
 		OrderDTO order = orderService.placeOrder(email, cartId, paymentMethod, cardInformation.getCardNumber(), cardInformation.getCvcNumber());
 		return new ResponseEntity<OrderDTO>(order, HttpStatus.CREATED);
 	}
